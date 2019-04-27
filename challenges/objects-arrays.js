@@ -82,7 +82,7 @@ for (let i = 0; i < graduates.length-1; i ++){
   universities.push(graduates[i].university);
 }
 
-const universitiesAlphabetical = universities.sort(function(a,b) {
+const universitiesAlphabetical = universities.sort((a,b) => {
   let nameA = a.toUpperCase();
   let nameB = b.toUpperCase();
   if (nameA < nameB){
@@ -147,7 +147,7 @@ The zoo wants to display both the scientific name and the animal name in front o
 */
 const animalNames = [];
 
-zooAnimals.forEach(function (element) {
+zooAnimals.forEach(element => {
   animalNames.push(`Name: ${element.animal_name}, Scientific Name: ${element.scientific_name}`);
 });
 
@@ -159,7 +159,7 @@ The zoos need a list of all their animal's names (names only, not scientific) co
 
 */
 
-const lowerCase = zooAnimals.map(function(element){
+const lowerCase = zooAnimals.map(element => {
   return element.animal_name.toLowerCase();
 })
 
@@ -170,7 +170,7 @@ console.log(lowerCase);
 The zoos are concenred about animals with a lower population count. Find out which animals have a population less than 5.
 
 */
-const largerPopulation = zooAnimals.filter(function(element){
+const largerPopulation = zooAnimals.filter(element => {
   return element.population < 5;
 });
 console.log(largerPopulation);
@@ -181,7 +181,7 @@ The zoos need to know their total animal population across the United States.  F
 
 */
 
-const populationTotal = zooAnimals.reduce(function(total,element){
+const populationTotal = zooAnimals.reduce((total,element) => {
   return total += element.population;
 }, 0);
 
